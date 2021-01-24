@@ -1,0 +1,71 @@
+.tutoring {
+  color: white;
+  padding: 0px 50px;
+}
+
+.tutoring__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFDF6C;
+}
+
+.tutoring__title h1 {
+  padding-left: 10px;
+}
+
+.tutoring h2 {
+  color: #CCC;
+}
+
+.tutoring__cards {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .tutoring__cards {
+    grid-template-columns: auto;
+  }
+}
+
+.tutoring__body {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 50px;
+}
+
+@media only screen and (max-width: 1350px) {
+.tutoring__body {
+  grid-template-columns: auto;
+}
+}
+
+.tutoring__information ul {
+  color: white;
+}
+
+.tutoring__information li {
+  align-items: center;
+  color: white;
+}
+
+.tutoring__information li > span {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.tutoring__information li > a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding-left: 8px;
+}
+
+.tutoring__information li > a:hover  {
+  color: #FFDF6C;
+}
