@@ -64,22 +64,42 @@
 .header__language__dropdown {
   position: absolute;
   top: 40px;
-  left: 150px;
+  left: 130px;
   text-align: left;
-  padding: 0px 10px;
+  padding: 0px 5px;
   background-color: rgba(27,27,27,0.75);
   overflow: hidden;
   z-index: 100;
 }
 
-.header__language__dropdown > p {
-  display: block;
+.header__language__dropdown > div {
+  display: flex;
+  white-space: nowrap;
   color: white;
+  align-items: center;
+  justify-items: left;
+  height: 32px;
 }
 
-.header__language__dropdown > p:hover {
+.header__language__dropdown > div:hover {
   cursor: pointer;
   color: #FFDF6C;
+}
+
+.header__language__dropdown > div > * {
+  display: inline;
+}
+
+.header__language__dropdown > div > p {
+}
+
+.header__language__dropdown > div > img {
+  margin-right: 8px;
+  height: 24px;
+}
+
+.header__language {
+  margin-top: 8px;
 }
 
 .header__dropdown {

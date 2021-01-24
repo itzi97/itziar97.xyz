@@ -10,7 +10,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import TranslateIcon from '@material-ui/icons/Translate';
 
-const Header = ({routes, languages, handleLanguageChange, currentLanguage}) => {
+const Header = ({ routes, languages, handleLanguageChange, currentLanguage }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showLanguage, setShowLanguage] = useState(false);
   const location = useLocation();
@@ -21,9 +21,16 @@ const Header = ({routes, languages, handleLanguageChange, currentLanguage}) => {
         className={location.pathname === route.path ? "header__active" : null}
         href={route.path}
       >
-        {currentLanguage === "English" ? route.titleEN : route.titleES }
+        {currentLanguage === "English" ? route.titleEN : route.titleES}
       </a>
     ));
+  };
+
+  const getLanguageIcon = (lang) => {
+    switch (lang) {
+      case "English": return "https://www.countryflags.io/us/flat/24.png"
+      case "Español": return "https://www.countryflags.io/es/flat/24.png"
+    };
   };
 
   return (
@@ -31,25 +38,28 @@ const Header = ({routes, languages, handleLanguageChange, currentLanguage}) => {
       <div className="header__left">
         <SiHaskell />
         <a href="/">itziar97.xyz</a>
-          {showLanguage ? (
-            <div className="header__language__dropdown">
-              {languages.map(l => (
-                currentLanguage !== l ? (<p
-                  onClick={() => {
-                    handleLanguageChange(l); 
-                    setShowLanguage(!showLanguage);
-                  }}>{l}</p>) : null
-              ))}
-            </div>
-          ) : null }
+        {showLanguage ? (
+          <div className="header__language__dropdown">
+            {languages.map(l => (
+              currentLanguage !== l ? (
+                <div>
+                  <img src={getLanguageIcon(l)} />
+                  <p
+                    onClick={() => {
+                      handleLanguageChange(l);
+                      setShowLanguage(!showLanguage);
+                    }}>{l}</p>
+                </div>) : null
+            ))}
+          </div>
+        ) : null}
         <div className="header__language">
-          <div 
+          <div
             onClick={() => setShowLanguage(!showLanguage)}
             className="header__language__menu"
           >
-            <IoLanguage /> {currentLanguage} {showLanguage ? (
-              <IoIosArrowUp />
-            ) : ( <IoIosArrowDown /> ) }
+            <img src={getLanguageIcon(currentLanguage)} />
+            {showLanguage ? (<IoIosArrowUp />) : (<IoIosArrowDown />)}
           </div>
         </div>
       </div>

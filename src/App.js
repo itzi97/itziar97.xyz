@@ -12,7 +12,7 @@ function App() {
   const routes = [
     { 
       path: "/", 
-      component: ProjectCards, 
+      component: Tutoring, 
       titleEN: null,
       titleES: null 
     },
@@ -22,18 +22,18 @@ function App() {
       titleEN: "Projects",
       titleES: "Proyectos" 
     },
-    { 
-      path: "/blogs", 
-      component: null, 
-      titleEN: "Blogs",
-      titleES: "Blogs" 
-    },
-    { 
-      path: "/lectures", 
-      component: null, 
-      titleEN: "Lecture Notes",
-      titleES: "Apuntes" 
-    },
+    //{
+    //  path: "/blogs",
+    //  component: null,
+    //  titleEN: "Blogs",
+    //  titleES: "Blogs"
+    //},
+    //{
+    //  path: "/lectures",
+    //  component: null,
+    //  titleEN: "Lecture Notes",
+    //  titleES: "Apuntes"
+    //},
     { 
       path: "/tutoring", 
       component: Tutoring, 
@@ -43,7 +43,7 @@ function App() {
   ];
 
   // Language
-  const languages = [ "English", "Español" ];
+  const languages = [ "English", "Español" ]; 
   const [language, setLanguage] = useState("English");
 
   return (
