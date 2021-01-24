@@ -64,7 +64,7 @@
 .header__language__dropdown {
   position: absolute;
   top: 40px;
-  left: 130px;
+  left: 138px;
   text-align: left;
   padding: 0px 5px;
   background-color: rgba(27,27,27,0.75);
@@ -90,16 +90,13 @@
   display: inline;
 }
 
-.header__language__dropdown > div > p {
-}
-
 .header__language__dropdown > div > img {
   margin-right: 8px;
   height: 24px;
 }
 
 .header__language {
-  margin-top: 8px;
+  margin-bottom: -3px;
 }
 
 .header__dropdown {
